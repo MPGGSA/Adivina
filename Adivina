@@ -1,0 +1,20 @@
+import pyttsx3
+import random
+import time
+engine = pyttsx3.init()
+voices = engine.getProperty('voices')
+engine.setProperty('rate', 150)
+engine.setProperty('voice', voices[0].id) 
+engine.say("Elige un número del 1 al 10 y lo adivinaré")
+engine.runAndWait()
+numero = (int(input("Elige un número del 1 al 10: ")))
+if numero < 1 or numero > 10:
+    engine.say("El número no está en el rango")
+    engine.runAndWait()
+    exit()
+time.sleep(1)
+engine.say("Listo?")
+engine.runAndWait()
+time.sleep(1)
+engine.say(f"Tu número es {numero}")
+engine.runAndWait()
